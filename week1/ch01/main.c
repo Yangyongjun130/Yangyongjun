@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>//malloc函数
 struct Node
@@ -165,9 +164,7 @@ int main()
 	return 0;
 	
 }
-#endif
 //栈的定义与操作
-#if 0
 #include <stdio.h>
 #include <stdlib.h>
 struct Node
