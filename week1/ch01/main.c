@@ -1,4 +1,4 @@
-#if 0
+
 #include <stdio.h>
 #include <stdlib.h>//malloc函数
 struct Node
