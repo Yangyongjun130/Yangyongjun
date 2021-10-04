@@ -3,7 +3,7 @@
 struct Node
 {
 	int Element;//数据域
-	struct Node* next;//指针域
+	struct Node* next;//指针域 
 };
 struct Node* createList()//创建一个链表
 {
