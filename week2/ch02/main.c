@@ -31,7 +31,7 @@ typedef struct SearchTreeNode //avl结点声明
 	 {
 		 printf("申请空间失败");
 	 }
-	 node->Element = X;
+	 node->Element = X; 
 	 node->lchild = NULL;
 	 node->rchild = NULL;
 	 return node;
