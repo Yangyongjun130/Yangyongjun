@@ -1,0 +1,61 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int leftchild(int i)//求左儿子的函数
+{
+	return 2*i + 1;
+}
+void percDown(vector<int>& nums, int i, int n)//堆排序 最大堆
+{
+	int child;
+	int tmp;
+
+	for (tmp = nums[i]; leftchild(i)< n; i = child)//这里有一个误区tmp始终没有更改过，一直是最开始的地方改变i并不能改变tmp 因为判定条件后面的操作是对i不是对tmp
+	{
+		child = leftchild(i);
+		if (child != n - 1 && nums[child + 1] > nums[child])//找出左儿子和右儿子里面比较大的一个
+		{
+			child++;
+		}
+		if (tmp < nums[child])
+		{
+			nums[i] = nums[child];
+		}
+		else
+		{
+			break;
+		}
+	}
+	nums[i] = tmp;
+}
+void Heapsort(vector<int>& nums, int n)
+{
+	int i;
+	for (i = n / 2; i >= 0; i--)//先建了一个最大堆
+	{
+		percDown(nums, i, n);
+	}
+	for (i = n - 1; i >= 0; i--)//删除最大值法来建立最小堆
+	{
+		swap(nums[0], nums[i]);
+		percDown(nums, 0, i);
+	}
+}
+int main()
+{
+	vector<int>nums;
+	nums.push_back(31);
+	nums.push_back(41);
+	nums.push_back(59);
+	nums.push_back(26);
+	nums.push_back(53);
+	nums.push_back(58);
+	nums.push_back(97);
+	Heapsort(nums, nums.size());
+	for (int i = 0; i < nums.size(); i++) 
+	{
+		cout << nums[i] << endl;
+	}
+	return 0;
+}
