@@ -7,7 +7,7 @@
 
 面试、笔试总结：
 
-操作系统：[](Yangyongjun/项目/linux基础.md)
+操作系统：[操作系统](Yangyongjun/项目/linux基础.md)
 
 计算机网络：
 
